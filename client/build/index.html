@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Crapy Snake</title>
+
+    <link rel="stylesheet" href="/styles-21aceb372f2f0c79.css" integrity="sha384&#x2D;7HPTkyuILJ5dHkS4rhtsyLS20v&#x2F;3jF2XhrkAc6QTsRYpVuoO&#x2B;B2aneWkszT0Fvlw"/>
+  
+<link rel="modulepreload" href="/craby-snake-a6bec94b22bcd757.js" crossorigin=anonymous integrity="sha384-1+rmIkhjSTB4/EtP3XzVZFQjgBZFo9W5ZlHldWLu0lPA+pL/d52qbm0APawY1cGM">
+<link rel="preload" href="/craby-snake-a6bec94b22bcd757_bg.wasm" crossorigin=anonymous integrity="sha384-O4cgRhN39UY+3GtVRBKRRb5YGhXm6TzkBwlHllaJOtywsQC3oTVFeeuk60jX1sgf" as="fetch" type="application/wasm"></head>
+  <body>
+<script type="module" nonce="ZxLCguxIbA4D7qH4mD6XOg==">
+import init, * as bindings from '/craby-snake-a6bec94b22bcd757.js';
+const wasm = await init('/craby-snake-a6bec94b22bcd757_bg.wasm');
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script></body>
+</html>
