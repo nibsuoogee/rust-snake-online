@@ -3,7 +3,10 @@ client/target
 # dev build
 client/dist
 server/dist
+*/target
 
 */node_modules
 
 .vscode
+
+private-key.pem

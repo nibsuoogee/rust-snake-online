@@ -197,3 +197,29 @@ setInterval(networkTic, 50);
 setInterval(foodSpawn, 10000);
 
 console.log("WebSocket server running on ws://localhost:8080");
+
+import https from "node:https";
+import fs from "node:fs";
+import express from "express";
+const app = express();
+const port = 8000;
+
+const options = {
+  key: fs.readFileSync("private-key.pem"),
+  cert: fs.readFileSync("certificate.pem"),
+};
+
+// Serve WASM files with correct MIME type
+app.use((req, res, next) => {
+  if (req.url.endsWith(".wasm")) {
+    res.set("Content-Type", "application/wasm");
+  }
+  next();
+});
+
+// Serve all static files from public directory
+app.use(express.static("public"));
+
+https.createServer(options, app).listen(port, () => {
+  console.log("Server is running on http://localhost:8000");
+});
